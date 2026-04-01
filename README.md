@@ -15,6 +15,9 @@
 [[code]](https://github.com/jinli99/DTGBrepGen)
 效果：
 
+4. Flatten The Complex: Joint B-Rep Generation via Compositional 𝑘-Cell Particles
+5. BrepDiff
+
 ## 其他格式
 1. (SIGGRAPH Asia 2025) Img2CAD: Reverse Engineering 3D CAD Models from Images
 [[paper]](https://arxiv.org/abs/2408.01437) 2024.6 
