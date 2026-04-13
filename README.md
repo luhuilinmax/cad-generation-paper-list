@@ -22,6 +22,10 @@
 [[paper]](https://arxiv.org/pdf/2601.16771)
 [[code]](https://github.com/123qiang06/BrepARG)
 
+7. BrepGPT: Autoregressive B-rep Generation with Voronoi Half-Patch
+[[paper]](https://arxiv.org/pdf/2511.22171))
+[[code]](https://github.com/BunnySoCrazy/BrepGPT)
+
 ## 其他格式
 1. (SIGGRAPH Asia 2025) Img2CAD: Reverse Engineering 3D CAD Models from Images
 [[paper]](https://arxiv.org/abs/2408.01437) 2024.6 
