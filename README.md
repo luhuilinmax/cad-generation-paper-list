@@ -19,10 +19,18 @@
 [[paper]](https://arxiv.org/abs/2512.03018) 2025.12 自回归生成 
 [[code]](https://github.com/AutodeskAILab/AutoBrep?tab=readme-ov-file) 
 
-*5. AutoRegressive Generation with B-rep Holistic Token Sequence Representation
+*5. 【BrepARG】AutoRegressive Generation with B-rep Holistic Token Sequence Representation
 [[paper]](https://arxiv.org/pdf/2601.16771) 2026.1
 [[code]](https://github.com/123qiang06/BrepARG)
-
+Validity算法是success rate * watertight rate
+watertight rate检查
+STEP 能读入
+只有一个 solid
+wire 顺序正常
+wire 无自交
+shell 没有 bad edges
+BRep 没有 free edges，也就是 watertight/closed
+ 
 6. Flatten The Complex: Joint B-Rep Generation via Compositional 𝑘-Cell Particles
 7. BrepDiff
 
@@ -70,17 +78,32 @@ ArtiCAD-Bench 数据集用于评价生成效果
 Chamfer 距离：点云误差，越小越好。
 体素 IoU：3D 重叠率，越高越好。
 DINOv2 相似度：渲染图视觉特征，越高越好。
-Validity：有效模型占比。
+Validity：有效模型占比。（实际是判断了有没有渲染出图片，没有关是不是水密）
 （2）/（3）：人类评估，就是打打分，打分具体要求不赘述，输入都是下面三部分
 请求；
 输出模型的六个正交视图：top、bottom、front、back、left、right；
 一个 isometric view（等轴测投影）。
 
 ## 想做好 neuralCAD-Edit，需要同时具备：
-1. 多模态理解能力
+（1）多模态理解能力
 看懂视频、语音、绘图、鼠标交互这些编辑要求。
-2. 代码能力
+（2）代码能力
 因为 AI 通过写 CadQuery 脚本来编辑模型。
-3. 3D 空间推理和几何操作能力
+（3）3D 空间推理和几何操作能力
 能理解 3D 相对位置、方向、结构关系，并准确修改模型。
+
+2. 【STEP-Parts】: Geometric Partitioning of Boundary Representations for Large-Scale CAD Processing
+[[paper]](https://arxiv.org/abs/2604.14927) 2026.4 
+做B-rep的实例分割的，提供工具链和数据集，说是发布了，哪儿也没找到
+
+## 重点
+并非是什么功能性部件或者外观上部件的分割，而是分割成了一个个几何区域，取决于
+B-Rep 面之间是否相邻；
+面的解析曲面类型是否相同；
+相邻面在公共边处是否近似切平滑；
+
+## related works
+【PartGen】Part-level 3D generation and reconstruction with multi-view diffusion models
+【PartCrafter】: Structured 3D Mesh Generation via √
+【Assembler】: Scalable 3D Part Assembly via Anchor Point Diffusion
 
