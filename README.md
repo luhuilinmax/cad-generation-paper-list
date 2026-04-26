@@ -56,3 +56,31 @@ ArtiCAD-Bench 数据集用于评价生成效果
 2. 可以参考的实验和评估指标， 在ArtiCAD-Bench, CADPrompt, and ACD三个数据集上做的，评估是对模型多角度渲染（包括articulated models的关节运动关键帧，为什么他不提工业assembly？joinable数据集明明都是这种），之后让三个VLM打分（感觉这里不是很透明，没有测评传统生成任务里的有效率，成功率=有效率？成功率竟然达到了百分之百，虽然可以理解这种代码生成的模型没有什么复杂度，成功率会高）
 3. 生成.FCstd这种格式倒是挺便利的，值得借鉴，如果按照我考虑的硬要生成b-rep(也就是step)，就丢失了关节信息，两个部件能装上的难度也很大，兜了个大圈子。
    但是代码生成这块，生成的模型就比较简单了（因为代码是按照先画草图再拉伸的逻辑写的，也用那种基元拼接的函数，像是那种自由曲面、流体外壳什么，依然也是做不了，这是代码生成这种方法无法突破的），估计joinable数据集那种的生成不了，而且代码生成开源项目之前只找到一个，还通通是用大模型做的。
+
+# 一些和生成不怎么相关的论文
+1. 【neuralCAD-Edit】 neuralCAD-Edit: An Expert Benchmark for Multimodal-Instructed 3D CAD Model Editing
+[[paper]](https://arxiv.org/abs/2604.16170) 2026.4
+[[code]](https://github.com/AutodeskAILab/neuralCAD-Edit)
+关于CAD模型编辑的工作，不是生成
+先记录编辑要求，然后让人类专家和AI一起编辑，AI获得的是原始step文件，用CadQuery Python 脚本编辑（这个肯定不会准啊，我觉得光是写CadQuery Python 脚本复刻这些step都会有问题）
+其实主要就是提供了数据集和benchmark，可以比较专业的评测AI的编辑能力。
+数据集的全面之处在于编辑指令多模态：视频 / 语音 / 手绘 / 鼠标交互
+评测指标
+（1）基础：
+Chamfer 距离：点云误差，越小越好。
+体素 IoU：3D 重叠率，越高越好。
+DINOv2 相似度：渲染图视觉特征，越高越好。
+Validity：有效模型占比。
+（2）/（3）：人类评估，就是打打分，打分具体要求不赘述，输入都是下面三部分
+请求；
+输出模型的六个正交视图：top、bottom、front、back、left、right；
+一个 isometric view（等轴测投影）。
+
+## 想做好 neuralCAD-Edit，需要同时具备：
+1. 多模态理解能力
+看懂视频、语音、绘图、鼠标交互这些编辑要求。
+2. 代码能力
+因为 AI 通过写 CadQuery 脚本来编辑模型。
+3. 3D 空间推理和几何操作能力
+能理解 3D 相对位置、方向、结构关系，并准确修改模型。
+
