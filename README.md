@@ -33,7 +33,9 @@ BRep 没有 free edges，也就是 watertight/closed
  
 6. Flatten The Complex: Joint B-Rep Generation via Compositional 𝑘-Cell Particles
 7. BrepDiff
-
+8.） https://github.com/earthtojake/text-to-cad 不是论文
+本地运行的开源 Text-to-CAD 工作流框架
+先描述零件、组件、夹具、机器人或机构；让 coding agent 修改 models/ 下的 CAD 源文件；再生成 STEP、STL、DXF、GLB 或 URDF；然后在本地 CAD Explorer 中检查；最后复制 @cad[...] 引用让 agent 做更精确的后续修改。
 
 ## 其他格式
 1. (SIGGRAPH Asia 2025) Img2CAD: Reverse Engineering 3D CAD Models from Images
@@ -97,7 +99,7 @@ Validity：有效模型占比。（实际是判断了有没有渲染出图片，
 做B-rep的实例分割的，提供工具链和数据集，说是发布了，哪儿也没找到
 
 ## 重点
-并非是什么功能性部件或者外观上部件的分割，而是分割成了一个个几何区域，取决于
+并非是什么功能性上或者语义上部件的分割，而是分割成了一个个几何区域，取决于
 B-Rep 面之间是否相邻；
 面的解析曲面类型是否相同；
 相邻面在公共边处是否近似切平滑；
@@ -105,5 +107,5 @@ B-Rep 面之间是否相邻；
 ## related works
 【PartGen】Part-level 3D generation and reconstruction with multi-view diffusion models
 【PartCrafter】: Structured 3D Mesh Generation via √
-【Assembler】: Scalable 3D Part Assembly via Anchor Point Diffusion
+【Assembler】: Scalable 3D Part Assembly via Anchor Point Diffusion 专门做了装配任务，之后可以看一下
 
