@@ -32,7 +32,7 @@ shell 没有 bad edges
 BRep 没有 free edges，也就是 watertight/closed
  
 6. Flatten The Complex: Joint B-Rep Generation via Compositional 𝑘-Cell Particles
-7. BrepDiff
+7. BrepDiff  
 8.） https://github.com/earthtojake/text-to-cad 不是论文
 本地运行的开源 Text-to-CAD 工作流框架  
 先描述零件、组件、夹具、机器人或机构；让 coding agent 修改 models/ 下的 CAD 源文件；再生成 STEP、STL、DXF、GLB 或 URDF；然后在本地 CAD Explorer 中检查；最后复制 @cad[...] 引用让 agent 做更精确的后续修改。  
