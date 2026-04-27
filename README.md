@@ -49,8 +49,7 @@ BRep 没有 free edges，也就是 watertight/closed
    
 # assembly
 ArtiCAD
-[[paper]](https://arxiv.org/abs/2408.01437) 2024.6 
-[[code]](https://github.com/qq456cvb/Img2CAD)  
+[[paper]](https://arxiv.org/abs/2408.01437) 2024.6   
 ## related work 
 Leo AI 没有生成零件的过程，输入文本需求（生成一个如何如何的装配体），用ai先查找库内零件（没有就联网搜索），然后给装配方案，装配过程也需要人工参与（参与多少？演示视频直接跳过了人工步骤，这个工作看起来还很初级）
 ## 工作
