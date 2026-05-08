@@ -37,11 +37,15 @@ BRep 没有 free edges，也就是 watertight/closed
  
 6. Flatten The Complex: Joint B-Rep Generation via Compositional 𝑘-Cell Particles
 7. BrepDiff
-8. 【Zero-to-CAD】Zero-to-CAD: Agentic Synthesis of Interpretable CAD Programs at Million-Scale Without Real Data
-[[paper]](https://arxiv.org/abs/2604.24479) 2026.4
+8. 【Zero-to-CAD】Zero-to-CAD: Agentic Synthesis of Interpretable CAD Programs at Million-Scale Without Real Data  
+[[paper]](https://arxiv.org/abs/2604.24479) 2026.4  
 [[code，dataset]](https://huggingface.co/collections/ADSKAILab/zero-to-cad)
-8.） https://github.com/earthtojake/text-to-cad 不是论文
-本地运行的开源 Text-to-CAD 工作流框架  
+Autodesk研发  
+不用任何真实的 CAD 构建历史数据，用大语言模型做智能体，在反馈驱动的 CAD 环境里，自动生成约100万条CadQuery 代码，还精选了 10 万高多样性子集；  
+再用这个合成数据集微调视觉 - 语言模型（VLM），做图片转可编辑 CAD 代码任务（什么可编辑？）
+
+8.） https://github.com/earthtojake/text-to-cad 不是论文  
+本地运行的开源 Text-to-CAD 工作流框架    
 先描述零件、组件、夹具、机器人或机构；让 coding agent 修改 models/ 下的 CAD 源文件；再生成 STEP、STL、DXF、GLB 或 URDF；然后在本地 CAD Explorer 中检查；最后复制 @cad[...] 引用让 agent 做更精确的后续修改。  
 
 生成装配体的效果：最后是一个step格式装配体，位置坐标是对的，没有关节运动。  
