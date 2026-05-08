@@ -16,8 +16,12 @@
 [[code]](https://github.com/BunnySoCrazy/BrepGPT)
 
 *4. (SIGGRAPH Asia 2025) AutoBrep: Autoregressive B-Rep Generation with Unified Topology and Geometry 
-[[paper]](https://arxiv.org/abs/2512.03018) 2025.12 自回归生成 
-[[code]](https://github.com/AutodeskAILab/AutoBrep?tab=readme-ov-file) 
+[[paper]](https://arxiv.org/abs/2512.03018) 2025.12 自回归生成  
+[[code]](https://github.com/AutodeskAILab/AutoBrep?tab=readme-ov-file)   
+Autodesk研发  
+不用任何真实的 CAD 构建历史数据，用大语言模型做智能体，在反馈驱动的 CAD 环境里，自动生成约100万条CadQuery 代码，还精选了 10 万高多样性子集；  
+再用这个合成数据集微调视觉 - 语言模型（VLM），做图片转可编辑 CAD 代码任务（指的是什么编辑？）
+
 
 *5. 【BrepARG】AutoRegressive Generation with B-rep Holistic Token Sequence Representation
 [[paper]](https://arxiv.org/pdf/2601.16771) 2026.1
