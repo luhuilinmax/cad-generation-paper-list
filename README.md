@@ -55,8 +55,12 @@ Autodesk研发
 ## 其他格式
 1. (SIGGRAPH Asia 2025) Img2CAD: Reverse Engineering 3D CAD Models from Images
 [[paper]](https://arxiv.org/abs/2408.01437) 2024.6 
-[[code]](https://github.com/qq456cvb/Img2CAD)  
+[[code]](https://github.com/qq456cvb/Img2CAD)
 
+2. 【CADFS】: A Big CAD Program Dataset and Framework for Computer-Aided Design with Large Language Models  
+[[paper]](https://arxiv.org/abs/2605.01925) 2026.5 
+[[code，dataset]](https://voyleg.github.io/cadfs/) 实则都是coming soon
+用Onshape 原生的 FeatureScript 脚本表示 CAD 设计步骤(这也是一种code？之前没了解过，得研究对比一下和别的的区别，以及它之前有没有用这种code)
    
 # assembly
 ArtiCAD
