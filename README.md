@@ -39,7 +39,7 @@ BRep 没有 free edges，也就是 watertight/closed
 7. BrepDiff
 8. 【Zero-to-CAD】Zero-to-CAD: Agentic Synthesis of Interpretable CAD Programs at Million-Scale Without Real Data  
 [[paper]](https://arxiv.org/abs/2604.24479) 2026.4  
-[[code，dataset]](https://huggingface.co/collections/ADSKAILab/zero-to-cad)
+[[code，dataset]](https://huggingface.co/collections/ADSKAILab/zero-to-cad)  
 Autodesk研发  
 不用任何真实的 CAD 构建历史数据，用大语言模型做智能体，在反馈驱动的 CAD 环境里，自动生成约100万条CadQuery 代码，还精选了 10 万高多样性子集；  
 再用这个合成数据集微调视觉 - 语言模型（VLM），做图片转可编辑 CAD 代码任务（什么可编辑？）
@@ -58,9 +58,18 @@ Autodesk研发
 [[code]](https://github.com/qq456cvb/Img2CAD)
 
 2. 【CADFS】: A Big CAD Program Dataset and Framework for Computer-Aided Design with Large Language Models  
-[[paper]](https://arxiv.org/abs/2605.01925) 2026.5 
-[[code，dataset]](https://voyleg.github.io/cadfs/) 实则都是coming soon
+[[paper]](https://arxiv.org/abs/2605.01925) 2026.5  
+[[code，dataset]](https://voyleg.github.io/cadfs/) 实则都是coming soon  
 用Onshape 原生的 FeatureScript 脚本表示 CAD 设计步骤(这也是一种code？之前没了解过，得研究对比一下和别的的区别，以及它之前有没有用这种code)
+模块 1：FeatureScript 重构管道（数据清洗）  
+  把 Onshape不能直接用的原始 CAD，转成FeatureScript脚本。
+模块 2：双 LLM 文本标注模块  
+  给FeatureScript写完全匹配的文字描述，用两个大模型：Annotator（写初稿）+ Reviewer（改错误）
+模块 3：VLM 微调模块（核心生成）  
+  第一阶段用DeepCAD 的17万数据做基础几何预训练，第二阶段用本论文的40.5 万数据（15 种操作）数复杂操作微调
+模块 4：推理执行模块  
+  输入→VLM 生成 FeatureScript 脚本→Onshape 内核编译→3D 模型  
+
    
 # assembly
 ArtiCAD
