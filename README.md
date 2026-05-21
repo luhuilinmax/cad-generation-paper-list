@@ -1,7 +1,7 @@
 # cad-generation-paper-list
 标注的时间是首发日期
 
-## CAD generation in B-rep format
+## CAD generation in B-rep format（无条件生成）
 1. (SIGGRAPH 2024) BrepGen: A B-rep Generative Diffusion Model with Structured Latent Geometry
 [[paper]](https://arxiv.org/abs/2512.03018) 2024.11 2个VAE+4个LDM，面和边由不同模块负责，生成出的采样点由opencascade库重建 主要为无条件生成 一个数据集有文本类别选择（家具数据集）
 [[code]](https://github.com/samxuxiang/BrepGen)
@@ -39,7 +39,7 @@ BRep 没有 free edges，也就是 watertight/closed
 7. BrepDiff
 8. 【Zero-to-CAD】Zero-to-CAD: Agentic Synthesis of Interpretable CAD Programs at Million-Scale Without Real Data  
 [[paper]](https://arxiv.org/abs/2604.24479) 2026.4  
-[[code，dataset]](https://huggingface.co/collections/ADSKAILab/zero-to-cad)  
+[[code，dataset]](https://huggingface.co/collections/ADSKAILab/zero-to-cad)   
 Autodesk研发  
 不用任何真实的 CAD 构建历史数据，用大语言模型做智能体，在反馈驱动的 CAD 环境里，自动生成约100万条CadQuery 代码，还精选了 10 万高多样性子集；  
 再用这个合成数据集微调视觉 - 语言模型（VLM），做图片转可编辑 CAD 代码任务（什么可编辑？）
@@ -50,7 +50,12 @@ Autodesk研发
 
 生成装配体的效果：最后是一个step格式装配体，位置坐标是对的，没有关节运动。  
 生成部件过程：先定义了一个装配坐标系，没有单独写成配置文件。  
-装配过程：读取已有零件 STEP，给每个实例一个名字，给每个实例一个装配变换矩阵，输出一个总装 STEP。  
+装配过程：读取已有零件 STEP，给每个实例一个名字，给每个实例一个装配变换矩阵，输出一个总装 STEP。
+
+## 一些有条件生成、不同模态的
+1. （CVPR 2025）【CADDreamer】: CAD Object Generation from Single-view Images  
+[[paper]](https://ieeexplore.ieee.org/abstract/document/11094964) 2025.2  
+
 
 ## 其他格式
 1. (SIGGRAPH Asia 2025) Img2CAD: Reverse Engineering 3D CAD Models from Images
